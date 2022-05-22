@@ -23,7 +23,7 @@ app.get('/', cors(), (req, res ) => {
   res.writeHead(200, {
     'Content-type': 'text/HTML;'
   })
-  res.end(JSON.stringify(new Date()));
+  res.end(JSON.stringify(new Date().toLocaleString()));
 })
 
 app.use(cors({

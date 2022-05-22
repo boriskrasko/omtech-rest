@@ -5,23 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time getter</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <button onclick="getDate()">Get Time</button>
-    <date></date>
-    <script>
-      const timeFromServer = document.createElement('h1')
-      document.body.appendChild(timeFromServer);
-      async function getDate() {
-        const url = `http://localhost:5000`;
-        try {
-          const res = await fetch(url);
-          const data = await res.json();
-          timeFromServer.textContent = data;
-        } catch {
-          console.log("error");
-        }
-      }
-    </script>
+    <div class="app">
+      <button class="button">Get Time</button>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
