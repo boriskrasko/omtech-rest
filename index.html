@@ -7,20 +7,21 @@
     <title>Time getter</title>
   </head>
   <body>
-    <button>Get Time</button>
+    <button onclick="getDate()">Get Time</button>
     <date></date>
     <script>
+      const timeFromServer = document.createElement('h1')
+      document.body.appendChild(timeFromServer);
       async function getDate() {
         const url = `http://localhost:5000`;
         try {
           const res = await fetch(url);
           const data = await res.json();
-          console.log(data);
+          timeFromServer.textContent = data;
         } catch {
           console.log("error");
         }
       }
-      getDate();
     </script>
   </body>
 </html>
